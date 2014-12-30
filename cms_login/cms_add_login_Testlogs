@@ -1,0 +1,215 @@
+Using rake 10.3.2
+Using i18n 0.6.11
+Using json 1.8.1
+Using minitest 5.4.2
+Using thread_safe 0.3.4
+Using tzinfo 1.2.2
+Using activesupport 4.1.6
+Using builder 3.2.2
+Using erubis 2.7.0
+Using actionview 4.1.6
+Using rack 1.5.2
+Using rack-test 0.6.2
+Using actionpack 4.1.6
+Using mime-types 2.4.1
+Using mail 2.6.1
+Using actionmailer 4.1.6
+Using activemodel 4.1.6
+Using arel 5.0.1.20140414130214
+Using activerecord 4.1.6
+Using addressable 2.3.6
+Using mini_portile 0.6.0
+Using nokogiri 1.6.3.1
+Using xpath 2.0.0
+Using capybara 2.1.0
+Using ffi 1.9.6
+Using childprocess 0.5.5
+Using diff-lcs 1.2.5
+Using multi_json 1.10.1
+Using gherkin 2.12.2
+Using multi_test 0.1.1
+Using cucumber 1.3.17
+Using bundler 1.7.0
+Using thor 0.19.1
+Using railties 4.1.6
+Using hike 1.2.3
+Using tilt 1.4.1
+Using sprockets 2.12.2
+Using sprockets-rails 2.2.0
+Using rails 4.1.6
+Using cucumber-rails 1.4.2
+Using database_cleaner 1.3.0
+Using headless 1.0.2
+Using launchy 2.4.2
+Using rack-protection 1.5.3
+Using rspec-support 3.1.2
+Using rspec-core 3.1.7
+Using rspec-expectations 3.1.2
+Using rspec-mocks 3.1.3
+Using rspec 3.1.0
+Using rspec-rails 3.1.0
+Using rubyzip 1.1.6
+Using websocket 1.2.1
+Using selenium-webdriver 2.43.0
+Using sinatra 1.4.5
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Using the default profile...
+Feature: login on MinLlw
+  As an internet user
+  I want to login on Minlaw
+  So that I access my content
+
+  @admin
+  Scenario: sucessful login to Minlaw
+    Given I am on Minlaw login page
+    When I enter "admin" in the UserName box
+    When I enter "password" in the Password box
+    When I click "Login" button
+    Then I should see a message "Welcome admin"
+
+  Scenario: login to Minlaw with empty userid
+    Given I am on Minlaw login page
+    When I enter "" in the UserName box
+    When I enter "password" in the Password box
+    When I click "Login" button
+    Then I should see a message "The User name field is required"
+
+  Scenario: login to Minlaw with invalid userid
+    Given I am on Minlaw login page
+    When I enter "admin1" in the UserName box
+    When I enter "password" in the Password box
+    When I click "Login" button
+    Then I should see a message "Invalid User"
+      Connection refused - connect(2) for "127.0.0.1" port 7056 (Errno::ECONNREFUSED)
+      ./features/steps_defination/cms_user_login_steps.rb:24:in `/^I should see a message "(.*?)"$/'
+      features/cms_login.feature:24:in `Then I should see a message "Invalid User"'
+      Connection refused - connect(2) for "127.0.0.1" port 7056 (Errno::ECONNREFUSED)
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `initialize'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `open'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `block in connect'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/timeout.rb:67:in `timeout'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:878:in `connect'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:863:in `do_start'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:852:in `start'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:1369:in `request'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:638:in `raw_execute'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:616:in `execute'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:365:in `deleteAllCookies'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/common/options.rb:67:in `delete_all_cookies'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/selenium/driver.rb:84:in `reset!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/session.rb:77:in `reset!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `block in reset_sessions!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `each'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `reset_sessions!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/cucumber.rb:10:in `After'
+
+  @user
+  Scenario: sucessful login to Minlaw
+    Given I am on Minlaw login page
+      Connection refused - connect(2) for "127.0.0.1" port 7056 (Errno::ECONNREFUSED)
+      ./features/steps_defination/cms_login_steps.rb:2:in `/^I am on Minlaw login page$/'
+      features/cms_login.feature:27:in `Given I am on Minlaw login page'
+    When I enter "user" in the UserName box
+    When I enter "password" in the Password box
+    When I click "Login" button
+    Then I should see a message "Welcome user"
+      Connection refused - connect(2) for "127.0.0.1" port 7056 (Errno::ECONNREFUSED)
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `initialize'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `open'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `block in connect'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/timeout.rb:67:in `timeout'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:878:in `connect'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:863:in `do_start'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:852:in `start'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:1369:in `request'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:638:in `raw_execute'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:616:in `execute'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:365:in `deleteAllCookies'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/common/options.rb:67:in `delete_all_cookies'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/selenium/driver.rb:84:in `reset!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/session.rb:77:in `reset!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `block in reset_sessions!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `each'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `reset_sessions!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/cucumber.rb:10:in `After'
+
+  Scenario: login to Minlaw with empty userid
+    Given I am on Minlaw login page
+      Connection refused - connect(2) for "127.0.0.1" port 7056 (Errno::ECONNREFUSED)
+      ./features/steps_defination/cms_login_steps.rb:2:in `/^I am on Minlaw login page$/'
+      features/cms_login.feature:33:in `Given I am on Minlaw login page'
+    When I enter "" in the UserName box
+    When I enter "password" in the Password box
+    When I click "Login" button
+    Then I should see a message "The User name field is required"
+      Connection refused - connect(2) for "127.0.0.1" port 7056 (Errno::ECONNREFUSED)
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `initialize'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `open'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `block in connect'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/timeout.rb:67:in `timeout'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:878:in `connect'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:863:in `do_start'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:852:in `start'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:1369:in `request'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:638:in `raw_execute'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:616:in `execute'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:365:in `deleteAllCookies'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/common/options.rb:67:in `delete_all_cookies'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/selenium/driver.rb:84:in `reset!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/session.rb:77:in `reset!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `block in reset_sessions!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `each'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `reset_sessions!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/cucumber.rb:10:in `After'
+
+  Scenario: login to Minlaw with invalid userid
+    Given I am on Minlaw login page
+      Connection refused - connect(2) for "127.0.0.1" port 7056 (Errno::ECONNREFUSED)
+      ./features/steps_defination/cms_login_steps.rb:2:in `/^I am on Minlaw login page$/'
+      features/cms_login.feature:40:in `Given I am on Minlaw login page'
+    When I enter "user99" in the UserName box
+    When I enter "password" in the Password box
+    When I click "Login" button
+    Then I should see a message "Invalid User"
+      Connection refused - connect(2) for "127.0.0.1" port 7056 (Errno::ECONNREFUSED)
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `initialize'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `open'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:879:in `block in connect'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/timeout.rb:67:in `timeout'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:878:in `connect'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:863:in `do_start'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:852:in `start'
+      /usr/local/rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/net/http.rb:1369:in `request'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:638:in `raw_execute'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:616:in `execute'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/remote/bridge.rb:365:in `deleteAllCookies'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/selenium-webdriver-2.43.0/lib/selenium/webdriver/common/options.rb:67:in `delete_all_cookies'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/selenium/driver.rb:84:in `reset!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/session.rb:77:in `reset!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `block in reset_sessions!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `each'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara.rb:245:in `reset_sessions!'
+      /usr/local/rvm/gems/ruby-2.1.0/gems/capybara-2.1.0/lib/capybara/cucumber.rb:10:in `After'
+
+Failing Scenarios:
+cucumber features/cms_login.feature:19
+cucumber features/cms_login.feature:26
+cucumber features/cms_login.feature:32
+cucumber features/cms_login.feature:39
+
+6 scenarios (4 failed, 2 passed)
+30 steps (4 failed, 12 skipped, 14 passed)
+1m25.092s
